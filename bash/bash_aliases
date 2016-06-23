@@ -1,0 +1,16 @@
+#!/bin/bash
+export SVN_EDITOR=emacs
+
+# Do what I mean, not what I say
+alias apt-get="sudo apt-get"
+# Remove temp files
+alias clean="find $(pwd) -name '*~' -delete"
+
+# Long, but without hidden files
+alias ll='ls -l'
+
+# Show changed files in a format suitable for creating a tar file
+alias svntar="svn st | grep -e '^M' -e '^\?' | sed s/^M// | sed s/^\?// | sed ':a;N;$!ba;s/\n/ /g' | sed -e 's/ \+ / /g'"
+
+# Epoch time
+alias utime='echo $(date --date"$(date)" +%s)'
