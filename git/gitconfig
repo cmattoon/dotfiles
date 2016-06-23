@@ -1,0 +1,45 @@
+[core]
+        editor = emacs
+[user]
+        name = Curtis Mattoon
+        email = cmattoon@cmattoon.com
+[alias]
+        # List all aliases
+        la = "!git config -l | grep alias | cut -c 7-"
+
+        # Fetch from origin and upstream, merge upstream/develop into local/develop
+        pu = !"git fetch origin -v; git fetch upstream -v; git merge upstream/develop"
+
+        # Pretty log
+        ls = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate
+
+        # Pretty log (with files)
+        ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
+
+        # One-line commits with dates
+        lds = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=short
+
+        # Plain text (for piping to other commands)
+        lnc = log --pretty=format:"%h\\ %s\\ [%cn]"
+
+        # Show the history of a file, with diffs
+        filelog = log -u
+        fl = log -u
+
+        # Find files and content inside files
+        f = "!git ls-files | grep -i"
+
+        # Fix commits!
+        # Take all uncommitted and un-staged changes in the current working directory and add them
+        # to the previous commit, amending it before pushing the change up.
+        # POTENTIALLY DANGEROUS! You should probably stage first, then run 'git commit --amend -C HEAD'
+        cia = commit -a --amend -C HEAD
+
+        ## SVN shortcuts
+        st = status
+        cl = clone
+        ci = commit
+        co = checkout
+        br = branch --color
+        diff = diff --word-diff
+        diffc = diff --cached
