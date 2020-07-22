@@ -43,3 +43,9 @@
         br = branch --color
         diff = diff --word-diff
         diffc = diff --cached
+
+[credential]
+	helper = osxkeychain
+
+[url "ssh://git@github.com/"]
+	insteadOf = https://github.com/
