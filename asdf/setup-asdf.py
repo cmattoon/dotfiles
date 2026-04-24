@@ -17,13 +17,18 @@ def exec(command: str):
 datafile = os.path.join(os.path.dirname(__file__), 'asdf.yaml')
 with open(datafile) as fd:
     data = yaml.load(fd, Loader=yaml.SafeLoader)
-
+try:
+    query = sys.argv[1]
+except IndexError:
+    query = None
+    
 for app in data:
     name = app.get('name')
-    plugin_url = app.get('plugin', {}).get('url')
-    current = app.get('current')
-    exec(f"asdf plugin add {name} {plugin_url}")
-    for version in app.get('versions'):
-        exec(f"asdf install {name} {version}")
-    exec(f"asdf set -p {name} {current}")
-    print("")
+    if query is None or query == name:
+        plugin_url = app.get('plugin', {}).get('url')
+        current = app.get('current')
+        exec(f"asdf plugin add {name} {plugin_url}")
+        for version in app.get('versions'):
+            exec(f"asdf install {name} {version}")
+        exec(f"asdf set -p {name} {current}")
+        print("")
