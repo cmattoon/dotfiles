@@ -1,0 +1,86 @@
+---
+- name: golang
+  versions:
+    - latest
+  current: latest
+  plugin:
+    url: https://github.com/asdf-community/asdf-golang.git
+
+- name: operator-sdk
+  versions:
+    - latest
+  current: latest
+  plugin:
+    url: https://github.com/Medium/asdf-operator-sdk.git
+
+- name: k9s
+  versions:
+    - latest
+  current: latest
+  plugin:
+    url: https://github.com/looztra/asdf-k9s.git
+
+- name: eksctl
+  versions:
+    - latest
+  current: latest
+  plugin:
+    url: https://github.com/elementalvoid/asdf-eksctl.git
+
+- name: kubectl
+  versions:
+    - latest
+  current: latest
+  plugin:
+    url: https://github.com/asdf-community/asdf-kubectl.git
+
+- name: awscli
+  versions:
+    - latest
+  current: latest
+  plugin:
+    url: https://github.com/MetricMike/asdf-awscli.git
+
+- name: kubectx
+  versions:
+    - latest
+  current: latest
+  plugin:
+    url: https://github.com/virtualstaticvoid/asdf-kubectx.git
+
+- name: flux2
+  versions:
+    - latest
+    - 2.2.3
+  current: 2.2.3
+  plugin:
+    url: https://github.com/tablexi/asdf-flux2.git
+
+- name: kustomize
+  versions:
+    - latest
+  current: latest
+  plugin:
+    url: https://github.com/Banno/asdf-kustomize.git
+
+- name: terraform
+  current: latest
+  versions:
+    - latest
+  plugin:
+    name: terraform
+    url: https://github.com/asdf-community/asdf-hashicorp.git
+
+- name: yq
+  current: latest
+  versions:
+    - latest
+  plugin:
+    url: https://github.com/sudermanjr/asdf-yq.git
+
+- name: nodejs
+  current: lts
+  versions:
+    - lts
+  plugin:
+    url: https://github.com/asdf-vm/asdf-nodejs.git
